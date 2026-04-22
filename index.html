@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BokeTI | 宝可梦性格测试</title>
+    <meta
+      name="description"
+      content="用 15 道选择题测出与你性格最接近的宝可梦。"
+    />
+    <link rel="preconnect" href="https://assets.pokemon.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="app" aria-label="BokeTI 宝可梦性格测试">
+        <header class="topbar">
+          <a class="brand" href="./index.html" aria-label="重新开始 BokeTI">
+            <span class="ball" aria-hidden="true"></span>
+            <span>BokeTI</span>
+          </a>
+          <div class="progress-text" id="progressText">第 1 / 15 题</div>
+        </header>
+
+        <section class="stage">
+          <aside class="poster" aria-label="候选宝可梦预览">
+            <img
+              class="poster-pokemon poster-a"
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+              alt="皮卡丘"
+            />
+            <img
+              class="poster-pokemon poster-b"
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png"
+              alt="耿鬼"
+            />
+            <img
+              class="poster-pokemon poster-c"
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/448.png"
+              alt="路卡利欧"
+            />
+            <div class="poster-copy">
+              <p class="kicker">15 题</p>
+              <h1>你的性格最像哪只宝可梦？</h1>
+              <p>
+                选择更接近你的反应方式，系统会按四组性格倾向匹配结果。
+              </p>
+            </div>
+          </aside>
+
+          <section class="panel" aria-live="polite">
+            <div id="startScreen" class="screen is-active">
+              <p class="eyebrow">MBTI 风格 · 宝可梦版</p>
+              <h2>开始 BokeTI 测试</h2>
+              <p class="intro">
+                题目没有对错。按第一直觉选择，最后会得到一只最贴近你的宝可梦、性格关键词和相处建议。
+              </p>
+              <button class="primary-button" id="startButton" type="button">
+                开始测试
+              </button>
+            </div>
+
+            <div id="quizScreen" class="screen">
+              <div class="meter" aria-hidden="true">
+                <span id="meterFill"></span>
+              </div>
+              <p class="eyebrow" id="questionAxis">性格倾向</p>
+              <h2 id="questionTitle"></h2>
+              <div class="choices" id="choices"></div>
+              <div class="nav-row">
+                <button class="ghost-button" id="backButton" type="button">
+                  上一题
+                </button>
+                <button class="ghost-button" id="restartButton" type="button">
+                  重来
+                </button>
+              </div>
+            </div>
+
+            <div id="resultScreen" class="screen">
+              <p class="eyebrow">你的宝可梦人格</p>
+              <div class="result-hero">
+                <img id="resultImage" src="" alt="" />
+                <div>
+                  <h2 id="resultName"></h2>
+                  <p class="type-line" id="resultType"></p>
+                </div>
+              </div>
+              <p class="result-code" id="resultCode"></p>
+              <p class="result-desc" id="resultDescription"></p>
+              <div class="trait-list" id="traitList"></div>
+              <div class="nav-row result-actions">
+                <button class="primary-button" id="shareButton" type="button">
+                  复制结果
+                </button>
+                <button class="ghost-button" id="againButton" type="button">
+                  再测一次
+                </button>
+              </div>
+              <p class="copy-status" id="copyStatus" role="status"></p>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
